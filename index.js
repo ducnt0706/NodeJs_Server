@@ -19,8 +19,12 @@ mongoose.connect(
     useNewUrlParser: true,
   }
 );
-mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
-mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err);
+mongoose.connection.once("open", () => {
+  console.log("MongoDB Connected");
+});
+mongoose.connection.on("error", (err) => {
+  console.log("MongoDB connection error: ", err);
+});
 // SET DEFAULT RES
 app.use(express.static("public"));
 // ROUTER
