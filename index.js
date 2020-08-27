@@ -14,7 +14,12 @@ app.use(express.json());
 // Moongoose
 mongoose.connect(
   "mongodb+srv://dbFruit:duc123@mycluster.0coyu.mongodb.net/dbFruit?retryWrites=true&w=majority",
-  { useUnifiedTopology: true, useNewUrlParser: true }
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  }
 );
 // SET DEFAULT RES
 app.use(express.static("public"));
