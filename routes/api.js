@@ -1,4 +1,5 @@
 const express = require("express");
+const Fruit=require('../model/fruit');
 
 // TODO: init 
 const router=express.Router();
@@ -8,9 +9,8 @@ router.get('/fruits',(req,res)=>{
 })
 
 router.post('/fruits',(req,res)=>{
-    res.send({
-        type:'POST',
-        payload:req.body,
+    Fruit.create(req.body).then((data)=>{
+        res.send(data);
     })
 })
 
