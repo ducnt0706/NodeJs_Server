@@ -1,11 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 // TODO: init app
 const app = express();
 const port = process.env.PORT || 3000;
 const router = require("./routes/api");
 // TODO: middleware
+//CORS
+app.use(cors());
 // Body Parser
 app.use(express.json());
 // Moongoose
