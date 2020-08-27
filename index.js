@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 const router = require("./routes/api");
 // TODO: middleware
 //CORS
-app.use(cors());
+app.use(cors({ origin: true }));
 // Body Parser
 app.use(express.json());
 // Moongoose
