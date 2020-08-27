@@ -4,6 +4,10 @@ const Fruit = require("../model/fruit");
 // TODO: init
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  res.send({ type: "GET", msg: "This is my server api" });
+});
+
 router.get("/fruits", (req, res) => {
   Fruit.find().then((data) => {
     res.send({ type: "GET", object: data });
